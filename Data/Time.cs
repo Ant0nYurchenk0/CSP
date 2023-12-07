@@ -16,5 +16,14 @@ namespace CSP
             TimeStr = timeStr;
             Id = _id++;
         }
+
+        internal Time Clone()
+        {
+            return new Time()
+            {
+                Id = Id,
+                TimeStr = TimeStr
+            };
+        }
     }
 }

@@ -23,5 +23,17 @@ namespace CSP
             Teacher = teacher;
             Course = course;
         }
+
+        internal Class Clone()
+        {
+            return new Class()
+            {
+                Id = Id,
+                Time = Time.Clone(),
+                Group = Group.Clone(),
+                Teacher = Teacher.Clone(),
+                Course = Course.Clone()
+            };
+        }
     }
 }

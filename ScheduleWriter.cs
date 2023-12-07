@@ -5,7 +5,7 @@
         internal static void Write(Schedule goodSchedule)
         {
             Console.WriteLine();
-            var groups = goodSchedule.Classes.Select(c => c.Group).Distinct();
+            var groups = goodSchedule.Classes.Select(c => c.Group).GroupBy(x => x.Id).Select(g => g.First()).ToList();
             foreach (var group in groups)
             {
                 Console.WriteLine("=========================================================================");
